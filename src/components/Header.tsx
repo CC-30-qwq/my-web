@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const navLinks = [
   { to: '/', label: '首页' },
@@ -10,13 +11,7 @@ const navLinks = [
 export default function Header() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const scrolled = useScrollSpy(10);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -37,7 +32,7 @@ export default function Header() {
             <span className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center text-white text-sm shadow-lg shadow-primary/30">
               W
             </span>
-            <span className="hidden sm:inline text-lg tracking-tight">WebGL 作品集</span>
+            <span className="hidden sm:inline text-lg tracking-tight">个人作品集</span>
           </Link>
 
           {/* Desktop Nav */}

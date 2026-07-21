@@ -25,7 +25,7 @@ const games: Game[] = [
   {
     id: 'sekiro',
     name: 'Sekiro',
-    description: '受经典动作游戏启发的 WebGL 作品，拥有流畅的战斗系统和精美的场景设计。',
+    description: '受经典动作游戏启发的互动作品，拥有流畅的战斗系统和精美的场景设计。',
     engine: 'Unity WebGL',
     thumbnail: '/images/games/sekiro.jpg',
     size: '66 MB',
