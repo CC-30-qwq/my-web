@@ -31,14 +31,15 @@ export default function GameDetail() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-bg-dark">
-      {/* Top bar */}
-      <div className="shrink-0 bg-bg-card/95 backdrop-blur-sm border-b border-border px-5 py-3">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
+    // h-dvh = 100dvh (动态视口高度，移动端地址栏折叠时自动适配)
+    <div className="flex flex-col bg-bg-dark" style={{ height: '100dvh' }}>
+      {/* Top bar — 精简高度 */}
+      <div className="shrink-0 bg-bg-card/95 backdrop-blur-sm border-b border-border px-4 py-2">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
             <Link
               to="/games"
-              className="text-text-muted hover:text-text-primary transition-colors shrink-0"
+              className="text-text-muted hover:text-text-primary transition-colors shrink-0 p-1"
               aria-label="返回游戏列表"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -47,7 +48,7 @@ export default function GameDetail() {
             </Link>
             <div className="min-w-0">
               <h2 className="text-body-strong text-text-primary truncate">{game.name}</h2>
-              <div className="flex items-center gap-2 text-body-muted">
+              <div className="flex items-center gap-2 text-body-muted" style={{ fontSize: '13px' }}>
                 <span>{game.engine}</span>
                 <span className="opacity-40" aria-hidden="true">·</span>
                 <span>{game.size}</span>
@@ -63,7 +64,7 @@ export default function GameDetail() {
         </div>
       </div>
 
-      {/* Game iframe — 使用 IframeLoader 管理加载/成功/失败三态 */}
+      {/* 游戏区域 — 自动填充剩余空间 */}
       <IframeLoader src={game.path} title={game.name} />
     </div>
   );

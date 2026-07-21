@@ -32,7 +32,7 @@ export default function Header() {
             <span className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center text-white text-sm shadow-lg shadow-primary/30">
               W
             </span>
-            <span className="hidden sm:inline text-lg tracking-tight">个人作品集</span>
+            <span className="hidden sm:inline text-lg tracking-tight">作品集</span>
           </Link>
 
           {/* Desktop Nav */}

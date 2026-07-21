@@ -7,7 +7,7 @@ export default function Contact() {
         <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">联系方式</span>
         <h1 className="text-h1 text-text-primary mt-3 mb-3 sm:text-4xl">联系我</h1>
         <p className="text-text-secondary text-body max-w-md mx-auto">
-          如果您有项目开发需求或希望合作，欢迎通过以下方式联系
+          有想法就聊聊，欢迎通过以下方式联系
         </p>
       </div>
 

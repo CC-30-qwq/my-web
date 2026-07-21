@@ -10,7 +10,7 @@ export default function Footer() {
             <span className="w-6 h-6 bg-bg-card rounded-md flex items-center justify-center text-text-muted text-body-muted font-bold border border-border">
               W
             </span>
-            <span>&copy; {currentYear} 个人作品集</span>
+            <span>&copy; {currentYear} 作品集</span>
           </div>
 
           <div className="flex items-center gap-5">

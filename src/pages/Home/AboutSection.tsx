@@ -1,10 +1,10 @@
 const items = [
-  { label: '开发经验', value: '3+ 年' },
-  { label: '技术栈', value: 'React / Unity / Cocos' },
-  { label: '擅长领域', value: '互动应用 / 前端工程化' },
-  { label: '部署平台', value: '腾讯云 / Vercel / GitHub' },
-  { label: '工作方式', value: '远程协作 / 独立开发' },
-  { label: '开发理念', value: '性能优先 / 用户体验' },
+  { label: '游戏引擎', value: 'Unity · Cocos Creator' },
+  { label: '编程语言', value: 'C# · TypeScript · Lua' },
+  { label: '前端开发', value: 'React · Vue · Tailwind' },
+  { label: '性能优化', value: '对象池 · 分帧 · 降采样' },
+  { label: '跨平台', value: '抖音 · 微信 · Web · PC' },
+  { label: '工程化', value: 'Git · 分层架构 · CI/CD' },
 ];
 
 export default function AboutSection() {
@@ -17,12 +17,11 @@ export default function AboutSection() {
           </span>
           <h2 className="text-h2 text-text-primary mt-3 mb-4">关于我</h2>
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
-            一名热爱技术创造的全栈工程师，专注于互动应用与前端领域，
-            致力于将优秀的产品体验带到浏览器中
+            会写游戏也会写网页，能做玩法也能做界面。独立完成过完整的商业级项目，
+            也参与过团队协作。习惯把事情从头到尾做完整，不挑技术栈。
           </p>
         </div>
 
-        {/* About cards — 去品牌色渐变，改用中性灰微调 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {items.map((item) => (
             <div key={item.label} className="flex items-center gap-4 card p-5">

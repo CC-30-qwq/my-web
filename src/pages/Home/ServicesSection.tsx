@@ -3,23 +3,23 @@ import ServiceCard from '../../components/ServiceCard';
 const services = [
   {
     icon: '🎮',
-    title: '互动应用开发',
-    description: '基于 Unity 和 Cocos Creator 引擎的互动应用开发，支持多平台发布，性能优化经验丰富。',
+    title: '游戏开发',
+    description: 'Unity 2D/3D、Cocos Creator 小游戏。Animator、UGUI、行为树、NavMesh、Input System，从玩法原型到完整项目交付。',
   },
   {
     icon: '🖥️',
-    title: '前端工程化',
-    description: 'React / Vue / TypeScript 技术栈，现代化前端架构设计，组件化开发，响应式布局。',
+    title: '前端工程',
+    description: 'React / Vue / TypeScript，响应式布局，组件化架构。这个网站就是自己搭的。',
+  },
+  {
+    icon: '🎨',
+    title: 'UI 与交互',
+    description: '界面拼接搭建、动效调校、多分辨率适配。关注信息层级与操作反馈，习惯站在用户角度审视体验。',
   },
   {
     icon: '☁️',
-    title: '云部署运维',
-    description: '腾讯云 COS + CDN 静态资源部署，自动化构建流水线，持续集成与持续交付。',
-  },
-  {
-    icon: '🎯',
-    title: '性能优化',
-    description: '资源压缩（Gzip/Brotli）、CDN 缓存策略、代码分割与懒加载，保障流畅体验。',
+    title: '部署上线',
+    description: '云服务静态部署、CDN 加速、CI/CD 流水线。抖音/微信/Web/PC 多平台发布与适配。',
   },
 ];
 
@@ -29,11 +29,11 @@ export default function ServicesSection() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">
-            服务项目
+            技能方向
           </span>
-          <h2 className="text-h2 text-text-primary mt-3 mb-4">业务服务</h2>
+          <h2 className="text-h2 text-text-primary mt-3 mb-4">能做什么</h2>
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
-            提供从项目开发到上线部署的全链路服务
+            不只一件——游戏、网页、界面、部署，哪块需要就搞哪块
           </p>
         </div>
 
