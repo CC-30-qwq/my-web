@@ -12,7 +12,7 @@ export default function Contact() {
       </div>
 
       {/* Contact cards */}
-      <div className="grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto mb-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-3xl mx-auto mb-16">
         {[
           {
             icon: (
@@ -21,9 +21,9 @@ export default function Contact() {
               </svg>
             ),
             title: '电子邮件',
-            desc: '发送邮件咨询项目需求',
-            action: 'example@email.com',
-            href: 'mailto:example@email.com',
+            desc: '发送邮件沟通',
+            action: '1025848465@qq.com',
+            href: 'mailto:1025848465@qq.com',
           },
           {
             icon: (
@@ -33,8 +33,20 @@ export default function Contact() {
             ),
             title: 'GitHub',
             desc: '查看我的开源项目',
-            action: 'github.com',
-            href: 'https://github.com',
+            action: 'CC-30-qwq',
+            href: 'https://github.com/CC-30-qwq',
+            external: true,
+          },
+          {
+            icon: (
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.24 1.56 3.733v7.08c-.036 1.493-.556 2.738-1.56 3.733-1.004.996-2.262 1.52-3.773 1.574h-.854v-2.79h.65c.72 0 1.31-.232 1.77-.697.46-.464.69-1.03.69-1.697V9.92c0-.67-.23-1.238-.69-1.705-.46-.466-1.05-.7-1.77-.7h-.65V4.653zM6.187 17.546v-6.56c0-.666.23-1.232.69-1.696.46-.465 1.05-.697 1.77-.697h.65V4.653h-.855c-1.51.055-2.769.58-3.773 1.574C3.665 7.222 3.145 8.467 3.109 9.96v7.08c.036 1.493.556 2.738 1.56 3.733 1.004.995 2.262 1.52 3.773 1.574h.855v-2.79h-.65c-.72 0-1.31-.233-1.77-.698-.46-.464-.69-1.03-.69-1.696v-.617zM2 8.626v6.88l2.4-3.44L2 8.626zm20 0l-2.4 3.44 2.4 3.44v-6.88z" />
+              </svg>
+            ),
+            title: 'Bilibili',
+            desc: '查看我的视频作品',
+            action: '赋青zy',
+            href: 'https://space.bilibili.com/3546640105343454',
             external: true,
           },
           {
@@ -45,7 +57,7 @@ export default function Contact() {
             ),
             title: '微信',
             desc: '添加微信好友沟通',
-            action: '微信号：your_wechat_id',
+            action: 'xzyandcl0413',
           },
         ].map((item) => (
           <div
