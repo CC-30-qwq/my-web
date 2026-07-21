@@ -85,34 +85,6 @@ export default function Contact() {
         ))}
       </div>
 
-      {/* Cooperation flow */}
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-h2 text-text-primary">合作流程</h2>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { step: '01', label: '需求沟通', desc: '明确项目范围与目标' },
-            { step: '02', label: '方案设计', desc: '技术选型与架构规划' },
-            { step: '03', label: '开发交付', desc: '迭代开发与测试上线' },
-            { step: '04', label: '持续运维', desc: '监控优化与版本更新' },
-          ].map((item, i) => (
-            <div key={item.step} className="text-center relative">
-              {/* Connector line */}
-              {i < 3 && (
-                <div className="hidden sm:block absolute top-5 left-[calc(50%+20px)] w-[calc(100%-40px)] h-px bg-border" aria-hidden="true" />
-              )}
-              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 relative z-10 ring-2 ring-bg-dark">
-                <span className="text-primary-light text-body-strong">{item.step}</span>
-              </div>
-              <div className="text-body-strong text-text-primary mb-1">{item.label}</div>
-              <div className="text-body-muted">{item.desc}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Contact form */}
       <div className="section-divider mb-16" />
       <div className="text-center mb-10">
