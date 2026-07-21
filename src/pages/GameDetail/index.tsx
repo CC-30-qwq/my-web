@@ -14,8 +14,8 @@ export default function GameDetail() {
           <svg className="w-20 h-20 mx-auto text-text-muted/50 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h1 className="text-h1 text-text-primary mb-2">游戏未找到</h1>
-          <p className="text-text-secondary text-body mb-6">该游戏不存在或已被移除</p>
+          <h1 className="text-h1 text-text-primary mb-2">作品未找到</h1>
+          <p className="text-text-secondary text-body mb-6">该作品不存在或已被移除</p>
           <Link
             to="/games"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5"
@@ -23,7 +23,7 @@ export default function GameDetail() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            返回游戏中心
+            返回作品列表
           </Link>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function GameDetail() {
             <Link
               to="/games"
               className="text-text-muted hover:text-text-primary transition-colors shrink-0 p-1"
-              aria-label="返回游戏列表"
+              aria-label="返回作品列表"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -64,8 +64,21 @@ export default function GameDetail() {
         </div>
       </div>
 
-      {/* 游戏区域 — 自动填充剩余空间 */}
-      <IframeLoader src={game.path} title={game.name} />
+      {/* 内容区域 — 自动填充剩余空间 */}
+      {game.type === 'video' ? (
+        <div className="flex-1 bg-black flex items-center justify-center p-4">
+          <video
+            src={game.path}
+            controls
+            className="max-w-full max-h-full rounded-lg"
+            style={{ maxHeight: 'calc(100dvh - 60px)' }}
+          >
+            您的浏览器不支持视频播放
+          </video>
+        </div>
+      ) : (
+        <IframeLoader src={game.path} title={game.name} />
+      )}
     </div>
   );
 }

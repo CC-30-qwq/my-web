@@ -1,8 +1,8 @@
 const items = [
   { label: '游戏引擎', value: 'Unity · Cocos Creator' },
   { label: '编程语言', value: 'C# · TypeScript · Lua' },
+  { label: 'AIGC', value: 'MJ · SD · ComfyUI · 即梦' },
   { label: '前端开发', value: 'React · Vue · Tailwind' },
-  { label: '性能优化', value: '对象池 · 分帧 · 降采样' },
   { label: '跨平台', value: '抖音 · 微信 · Web · PC' },
   { label: '工程化', value: 'Git · 分层架构 · CI/CD' },
 ];
@@ -17,8 +17,8 @@ export default function AboutSection() {
           </span>
           <h2 className="text-h2 text-text-primary mt-3 mb-4">关于我</h2>
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
-            会写游戏也会写网页，能做玩法也能做界面。独立完成过完整的商业级项目，
-            也参与过团队协作。习惯把事情从头到尾做完整，不挑技术栈。
+            会写游戏也会写网页，能做玩法也能做界面。
+            习惯把事情从头到尾做完整，不挑技术栈。
           </p>
         </div>
 

@@ -9,6 +9,7 @@ interface GameCardProps {
 const engineToVariant = (engine: string): 'primary' | 'accent' | 'neutral' => {
   if (engine === 'Unity WebGL') return 'primary';
   if (engine === 'Cocos Creator') return 'accent';
+  if (engine === 'AIGC') return 'accent';
   return 'neutral';
 };
 

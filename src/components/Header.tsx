@@ -4,7 +4,7 @@ import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const navLinks = [
   { to: '/', label: '首页' },
-  { to: '/games', label: '游戏中心' },
+  { to: '/games', label: '作品' },
   { to: '/contact', label: '联系我' },
 ];
 

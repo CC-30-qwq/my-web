@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 const stats = [
-  { value: '6+', label: '项目作品' },
-  { value: 'Unity', label: 'Cocos' },
+  { value: 'Unity', label: 'Cocos Creator' },
   { value: 'C# / TS', label: '主力语言' },
+  { value: 'MJ · SD', label: 'ComfyUI' },
   { value: '多端', label: '跨平台' },
 ];
 
@@ -27,7 +27,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-body text-text-secondary mb-12 leading-relaxed max-w-xl mx-auto">
-          会写代码，会做游戏，会搭界面，会上线部署<br />
+          会写游戏，会搭界面，会做 AIGC，会上线部署<br />
           独立搞定从零到一，也擅长团队协作交付
         </p>
 

@@ -2,12 +2,13 @@ export interface Game {
   id: string;
   name: string;
   description: string;
-  engine: 'Unity WebGL' | 'Cocos Creator';
+  engine: 'Unity WebGL' | 'Cocos Creator' | 'AIGC';
   thumbnail: string;
   size: string;
   tags: string[];
   path: string;
   featured: boolean;
+  type?: 'game' | 'video';
 }
 
 const games: Game[] = [
@@ -65,6 +66,18 @@ const games: Game[] = [
     tags: ['RTS', 'NavMesh', 'UGUI', '框选交互', '对象池'],
     path: '/games/rts/index.html',
     featured: false,
+  },
+  {
+    id: 'aigc-video',
+    name: 'AIGC 短视频创作',
+    description: '独立完成的 AI 短视频全流程制作。使用即梦文生视频/图生视频工具生成素材，配合剪映完成多轨道剪辑、调色与特效包装。涵盖"提示词→生成→筛选→后期"四步创作流程，快速响应选题，具备独立成片交付能力。',
+    engine: 'AIGC',
+    thumbnail: '',
+    size: '1.1 MB',
+    tags: ['AIGC', '即梦', '剪映', '文生视频', '后期剪辑'],
+    path: '/videos/aigc.mp4',
+    featured: true,
+    type: 'video',
   },
 ];
 

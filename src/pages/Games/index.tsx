@@ -9,7 +9,7 @@ export default function Games() {
   const [selectedTag, setSelectedTag] = useState<string>('');
   const [selectedEngine, setSelectedEngine] = useState<string>('');
 
-  // 5 条数据直接 filter — 无需 useMemo 开销
+  // 直接 filter — 无需 useMemo 开销
   const filtered = games.filter((game) => {
     const matchSearch =
       !search ||
@@ -24,10 +24,10 @@ export default function Games() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       {/* Header */}
       <div className="text-center mb-10">
-        <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">游戏中心</span>
-        <h1 className="text-h1 text-text-primary mt-3 mb-3 sm:text-4xl">游戏中心</h1>
+        <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">作品列表</span>
+        <h1 className="text-h1 text-text-primary mt-3 mb-3 sm:text-4xl">作品</h1>
         <p className="text-text-secondary text-body max-w-md mx-auto">
-          所有游戏均可在线试玩，无需下载安装。点击游戏卡片即可开始体验
+          游戏可在线试玩，AIGC 视频可直接播放
         </p>
       </div>
 
@@ -69,9 +69,10 @@ export default function Games() {
           className="py-2.5 px-4 bg-bg-card border border-border rounded-lg text-text-primary text-body cursor-pointer min-w-[140px]"
           aria-label="按引擎筛选"
         >
-          <option value="">全部引擎</option>
+          <option value="">全部类型</option>
           <option value="Unity WebGL">Unity WebGL</option>
           <option value="Cocos Creator">Cocos Creator</option>
+          <option value="AIGC">AIGC</option>
         </select>
       </div>
 
@@ -87,7 +88,7 @@ export default function Games() {
           <svg className="w-16 h-16 mx-auto text-text-muted/50 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p className="text-text-secondary text-h2">没有找到匹配的游戏</p>
+          <p className="text-text-secondary text-h2">没有找到匹配的作品</p>
           <p className="text-text-muted text-body mt-1">试试调整筛选条件</p>
         </div>
       )}

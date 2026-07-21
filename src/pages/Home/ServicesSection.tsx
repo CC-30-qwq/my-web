@@ -4,7 +4,7 @@ const services = [
   {
     icon: '🎮',
     title: '游戏开发',
-    description: 'Unity 2D/3D、Cocos Creator 小游戏。Animator、UGUI、行为树、NavMesh、Input System，从玩法原型到完整项目交付。',
+    description: 'Unity 2D/3D、Cocos Creator 小游戏。Animator、UGUI、行为树、NavMesh，从玩法原型到完整项目交付。',
   },
   {
     icon: '🖥️',
@@ -12,9 +12,9 @@ const services = [
     description: 'React / Vue / TypeScript，响应式布局，组件化架构。这个网站就是自己搭的。',
   },
   {
-    icon: '🎨',
-    title: 'UI 与交互',
-    description: '界面拼接搭建、动效调校、多分辨率适配。关注信息层级与操作反馈，习惯站在用户角度审视体验。',
+    icon: '🤖',
+    title: 'AIGC 创作',
+    description: 'Midjourney 风格控制、Stable Diffusion + ControlNet 精准控图、ComfyUI 自动化工作流、即梦文生视频、剪映后期。',
   },
   {
     icon: '☁️',
@@ -33,7 +33,7 @@ export default function ServicesSection() {
           </span>
           <h2 className="text-h2 text-text-primary mt-3 mb-4">能做什么</h2>
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
-            不只一件——游戏、网页、界面、部署，哪块需要就搞哪块
+            不只一件——游戏、网页、AIGC、部署，哪块需要就搞哪块
           </p>
         </div>
 
