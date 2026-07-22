@@ -71,9 +71,12 @@ function ThumbnailPlaceholder({ game }: { game: Game }) {
 
   // 无图片或有错误 — 自动生成渐变色占位
   return (
-    <div className={`relative w-full aspect-video bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}>
-      <span className="text-4xl opacity-20 select-none font-bold text-text-muted">
-        {game.name.charAt(0)}
+    <div
+      aria-label={`游戏：${game.name}`}
+      className={`relative w-full aspect-video bg-gradient-to-br ${gradient} flex items-center justify-center overflow-hidden`}
+    >
+      <span className="text-6xl opacity-20 select-none font-bold text-text-muted" aria-hidden="true">
+        🎮
       </span>
       {/* 装饰圆点 */}
       <div className="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-primary/10" />

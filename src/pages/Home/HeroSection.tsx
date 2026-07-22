@@ -6,10 +6,10 @@ import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { useCountUp } from '../../hooks/useCountUp';
 
 const stats = [
-  { value: 3, suffix: '', label: 'Unity · Cocos', isNumeric: true },
-  { value: 3, suffix: '+', label: 'C# / TS 语言', isNumeric: true },
-  { value: 3, suffix: '', label: 'MJ · SD · ComfyUI', isNumeric: true },
-  { value: 4, suffix: '', label: '多端跨平台', isNumeric: true },
+  { value: 3, suffix: '', label: 'Unity / Cocos 项目数量', isNumeric: true },
+  { value: 3, suffix: '+', label: 'C# / TS 语言支持', isNumeric: true },
+  { value: 3, suffix: '', label: 'AIGC 工具经验', isNumeric: true },
+  { value: 4, suffix: '', label: '多端支持平台', isNumeric: true },
 ];
 
 /** 按钮点击涟漪 Hook */
