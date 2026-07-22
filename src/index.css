@@ -280,6 +280,17 @@
   animation: char-fade-in 0.4s ease-out forwards;
 }
 
+/* ===== 亮色模式 — 覆盖 Tailwind @theme 颜色变量 ===== */
+[data-theme="light"] {
+  --color-bg-dark: #f8fafc;
+  --color-bg-card: #ffffff;
+  --color-bg-section: #f1f5f9;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-border: #d1d5db;
+}
+
 /* ===== Reduced motion: 尊重用户动效偏好 ===== */
 @media (prefers-reduced-motion: reduce) {
   *,

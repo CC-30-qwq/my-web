@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface AnimatedTitleProps {
@@ -37,12 +37,13 @@ export default function AnimatedTitle({
           className="char-anim"
           style={{
             animationDelay: started ? `${i * charDelay}ms` : '0ms',
-            // 空格保留宽度
-            display: char === ' ' ? 'inline' : 'inline-block',
+            display: 'inline-block',
+            // 空格保留正常宽度和换行行为
+            whiteSpace: char === ' ' ? 'pre' : undefined,
           }}
-          aria-hidden={char === ' '}
+          aria-hidden={char === ' ' ? true : undefined}
         >
-          {char === ' ' ? ' ' : char}
+          {char}
         </span>
       ))}
     </Tag>
