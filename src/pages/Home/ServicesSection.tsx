@@ -1,6 +1,5 @@
 import ServiceCard from '../../components/ServiceCard';
 import AnimatedTitle from '../../components/AnimatedTitle';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const services = [
   {

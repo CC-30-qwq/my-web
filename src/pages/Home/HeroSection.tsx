@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import ParticleBackground from '../../components/ParticleBackground';
 import { useMouseParallax } from '../../hooks/useMouseParallax';
