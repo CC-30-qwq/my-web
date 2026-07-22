@@ -1,11 +1,16 @@
 import ContactForm from '../../components/ContactForm';
+import AnimatedTitle from '../../components/AnimatedTitle';
 
 export default function Contact() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       <div className="text-center mb-14">
         <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">联系方式</span>
-        <h1 className="text-h1 text-text-primary mt-3 mb-3 sm:text-4xl">联系我</h1>
+        <AnimatedTitle
+          text="联系我"
+          as="h1"
+          className="text-h1 text-text-primary mt-3 mb-3 sm:text-4xl"
+        />
         <p className="text-text-secondary text-body max-w-md mx-auto">
           有想法就聊聊，欢迎通过以下方式联系
         </p>
@@ -76,7 +81,7 @@ export default function Contact() {
       {/* Contact form */}
       <div className="section-divider mb-16" />
       <div className="text-center mb-10">
-        <h2 className="text-h2 text-text-primary">发送消息</h2>
+        <AnimatedTitle text="发送消息" className="text-h2 text-text-primary" />
         <p className="text-text-secondary text-body mt-2">直接给我留言，我会尽快回复</p>
       </div>
       <ContactForm />

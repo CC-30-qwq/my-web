@@ -10,7 +10,8 @@ interface LazyImageProps {
  * 图片懒加载组件
  * - Intersection Observer 延迟加载（提前 200px 预加载）
  * - 自动请求 WebP 格式（同目录同名 .webp），JPG 作为 fallback
- * - 加载前渲染骨架占位，加载后淡入过渡
+ * - 加载前渲染骨架脉冲占位，加载后淡入过渡
+ * - 原生 loading="lazy" 双重保障
  */
 export default function LazyImage({ src, alt, className = '' }: LazyImageProps) {
   const [loaded, setLoaded] = useState(false);
@@ -40,10 +41,10 @@ export default function LazyImage({ src, alt, className = '' }: LazyImageProps) 
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      {/* 加载前骨架占位 */}
+      {/* 加载前骨架脉冲占位 */}
       {!loaded && (
         <div
-          className="absolute inset-0 bg-bg-card animate-pulse"
+          className="absolute inset-0 skeleton-pulse"
           aria-hidden="true"
         />
       )}
@@ -54,6 +55,7 @@ export default function LazyImage({ src, alt, className = '' }: LazyImageProps) 
           <img
             src={src}
             alt={alt}
+            loading="lazy"
             className={`w-full h-full object-cover transition-opacity duration-500 ${
               loaded ? 'opacity-100' : 'opacity-0'
             }`}

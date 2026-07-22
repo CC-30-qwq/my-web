@@ -1,3 +1,5 @@
+import AnimatedTitle from '../../components/AnimatedTitle';
+
 const items = [
   { label: '游戏引擎', value: 'Unity · Cocos Creator' },
   { label: '编程语言', value: 'C# · TypeScript · Lua' },
@@ -15,7 +17,10 @@ export default function AboutSection() {
           <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">
             个人简介
           </span>
-          <h2 className="text-h2 text-text-primary mt-3 mb-4">关于我</h2>
+          <AnimatedTitle
+            text="关于我"
+            className="text-h2 text-text-primary mt-3 mb-4"
+          />
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
             会写游戏也会写网页，能做玩法也能做界面。
             习惯把事情从头到尾做完整，不挑技术栈。

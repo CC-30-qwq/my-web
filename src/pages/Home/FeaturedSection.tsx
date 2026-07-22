@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import GameCard from '../../components/GameCard';
+import AnimatedTitle from '../../components/AnimatedTitle';
 import games from '../../data/games';
 
 const featuredGames = games.filter((g) => g.featured);
@@ -13,7 +14,10 @@ export default function FeaturedSection() {
             <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">
               游戏精选
             </span>
-            <h2 className="text-h2 text-text-primary mt-3 mb-2">精选游戏</h2>
+            <AnimatedTitle
+              text="精选游戏"
+              className="text-h2 text-text-primary mt-3 mb-2"
+            />
             <p className="text-text-secondary text-body">在线试玩，无需下载安装</p>
           </div>
           <Link

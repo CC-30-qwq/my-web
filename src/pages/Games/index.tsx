@@ -4,12 +4,14 @@ import games from '../../data/games';
 
 const allTags = Array.from(new Set(games.flatMap((g) => g.tags))).sort();
 
+type ViewMode = 'grid' | 'list';
+
 export default function Games() {
   const [search, setSearch] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('');
   const [selectedEngine, setSelectedEngine] = useState<string>('');
+  const [viewMode, setViewMode] = useState<ViewMode>('grid');
 
-  // 直接 filter — 无需 useMemo 开销
   const filtered = games.filter((game) => {
     const matchSearch =
       !search ||
@@ -31,7 +33,7 @@ export default function Games() {
         </p>
       </div>
 
-      {/* Filters */}
+      {/* Filters + View Toggle */}
       <div className="flex flex-col sm:flex-row gap-3 mb-10">
         <div className="flex-1 relative">
           <svg
@@ -74,11 +76,47 @@ export default function Games() {
           <option value="Cocos Creator">Cocos Creator</option>
           <option value="AIGC">AIGC</option>
         </select>
+
+        {/* 网格/列表视图切换 */}
+        <div className="flex items-center gap-1 bg-bg-card border border-border rounded-lg p-1">
+          <button
+            onClick={() => setViewMode('grid')}
+            className={`p-2 rounded-md transition-colors ${
+              viewMode === 'grid'
+                ? 'bg-primary/20 text-primary-light'
+                : 'text-text-muted hover:text-text-secondary'
+            }`}
+            aria-label="网格视图"
+            aria-pressed={viewMode === 'grid'}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setViewMode('list')}
+            className={`p-2 rounded-md transition-colors ${
+              viewMode === 'list'
+                ? 'bg-primary/20 text-primary-light'
+                : 'text-text-muted hover:text-text-secondary'
+            }`}
+            aria-label="列表视图"
+            aria-pressed={viewMode === 'list'}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Game Grid */}
+      {/* Game Grid / List */}
       {filtered.length > 0 ? (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className={`${
+          viewMode === 'grid'
+            ? 'grid sm:grid-cols-2 lg:grid-cols-3 gap-5'
+            : 'grid grid-cols-1 gap-4'
+        }`}>
           {filtered.map((game) => (
             <GameCard key={game.id} game={game} />
           ))}

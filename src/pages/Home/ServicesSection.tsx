@@ -1,4 +1,6 @@
 import ServiceCard from '../../components/ServiceCard';
+import AnimatedTitle from '../../components/AnimatedTitle';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const services = [
   {
@@ -31,7 +33,10 @@ export default function ServicesSection() {
           <span className="text-body-muted font-semibold text-primary-light uppercase tracking-widest">
             技能方向
           </span>
-          <h2 className="text-h2 text-text-primary mt-3 mb-4">能做什么</h2>
+          <AnimatedTitle
+            text="能做什么"
+            className="text-h2 text-text-primary mt-3 mb-4"
+          />
           <p className="text-text-secondary max-w-xl mx-auto text-body leading-relaxed">
             不只一件——游戏、网页、AIGC、部署，哪块需要就搞哪块
           </p>
