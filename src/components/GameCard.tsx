@@ -7,27 +7,32 @@ interface GameCardProps {
   game: Game;
 }
 
-const engineToVariant = (engine: string): 'primary' | 'accent' | 'success' | 'neutral' => {
-  if (engine === 'Unity WebGL') return 'primary';
-  if (engine === 'Cocos Creator') return 'accent';
-  if (engine === 'AIGC') return 'success';
-  return 'neutral';
+const ENGINE_CONFIG: Record<string, { variant: 'primary' | 'accent' | 'success' | 'neutral'; accentBar: string; hoverBorder: string; gradient: string }> = {
+  'Unity WebGL': {
+    variant: 'primary',
+    accentBar: 'bg-primary/60 group-hover:bg-primary',
+    hoverBorder: 'group-hover:border-primary/40',
+    gradient: 'from-primary/20 via-primary/10 to-bg-card',
+  },
+  'Cocos Creator': {
+    variant: 'accent',
+    accentBar: 'bg-accent/60 group-hover:bg-accent',
+    hoverBorder: 'group-hover:border-accent/40',
+    gradient: 'from-accent/20 via-accent/10 to-bg-card',
+  },
+  'AIGC': {
+    variant: 'success',
+    accentBar: 'bg-success/60 group-hover:bg-success',
+    hoverBorder: 'group-hover:border-success/40',
+    gradient: 'from-success/20 via-success/10 to-bg-card',
+  },
 };
 
-/** 引擎对应的顶部色条颜色 */
-const engineAccentBar = (engine: string): string => {
-  if (engine === 'Unity WebGL') return 'bg-primary/60 group-hover:bg-primary';
-  if (engine === 'Cocos Creator') return 'bg-accent/60 group-hover:bg-accent';
-  if (engine === 'AIGC') return 'bg-success/60 group-hover:bg-success';
-  return 'bg-border group-hover:bg-text-muted';
-};
-
-/** 引擎对应的 hover border 颜色 */
-const engineHoverBorder = (engine: string): string => {
-  if (engine === 'Unity WebGL') return 'group-hover:border-primary/40';
-  if (engine === 'Cocos Creator') return 'group-hover:border-accent/40';
-  if (engine === 'AIGC') return 'group-hover:border-success/40';
-  return 'group-hover:border-border';
+const DEFAULT_ENGINE = {
+  variant: 'neutral' as const,
+  accentBar: 'bg-border group-hover:bg-text-muted',
+  hoverBorder: 'group-hover:border-border',
+  gradient: 'from-bg-card to-bg-card',
 };
 
 /**
@@ -39,14 +44,7 @@ function ThumbnailPlaceholder({ game }: { game: Game }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
 
-  // 渐变色映射
-  const gradientMap: Record<string, string> = {
-    'Unity WebGL': 'from-primary/20 via-primary/10 to-bg-card',
-    'Cocos Creator': 'from-accent/20 via-accent/10 to-bg-card',
-    'AIGC': 'from-success/20 via-success/10 to-bg-card',
-  };
-
-  const gradient = gradientMap[game.engine] || 'from-bg-card to-bg-card';
+  const gradient = ENGINE_CONFIG[game.engine]?.gradient ?? DEFAULT_ENGINE.gradient;
 
   if (hasImage && !imgError) {
     return (
@@ -85,13 +83,15 @@ function ThumbnailPlaceholder({ game }: { game: Game }) {
 }
 
 export default function GameCard({ game }: GameCardProps) {
+  const cfg = ENGINE_CONFIG[game.engine] ?? DEFAULT_ENGINE;
+
   return (
     <Link
       to={`/games/${game.id}`}
-      className={`group block card hover:-translate-y-1 ${engineHoverBorder(game.engine)}`}
+      className={`group block card hover:-translate-y-1 ${cfg.hoverBorder}`}
     >
       {/* 引擎色条 */}
-      <div className={`h-1 rounded-t-xl transition-colors ${engineAccentBar(game.engine)}`} />
+      <div className={`h-1 rounded-t-xl transition-colors ${cfg.accentBar}`} />
 
       {/* 缩略图区域 16:9 */}
       <ThumbnailPlaceholder game={game} />
@@ -99,7 +99,7 @@ export default function GameCard({ game }: GameCardProps) {
       <div className="p-5">
         {/* 引擎 + 大小 */}
         <div className="flex items-center justify-between mb-3">
-          <Badge variant={engineToVariant(game.engine)}>{game.engine}</Badge>
+          <Badge variant={cfg.variant}>{game.engine}</Badge>
           <span className="text-body-muted">{game.size}</span>
         </div>
 

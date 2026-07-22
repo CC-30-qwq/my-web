@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface AnimatedTitleProps {
@@ -12,7 +11,7 @@ interface AnimatedTitleProps {
 /**
  * 逐字渐入动画标题
  * - 当滚动进入视口时，每个字符从左下到右上依次淡入+上移
- * - 使用 IntersectionObserver 触发
+ * - 使用 IntersectionObserver 触发（once: true，触发后不再变化）
  */
 export default function AnimatedTitle({
   text,
@@ -21,13 +20,6 @@ export default function AnimatedTitle({
   charDelay = 50,
 }: AnimatedTitleProps) {
   const { ref, isIntersecting } = useIntersectionObserver<HTMLHeadingElement>({ threshold: 0.3 });
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    if (isIntersecting && !started) {
-      setStarted(true);
-    }
-  }, [isIntersecting, started]);
 
   return (
     <Tag ref={ref} className={className} aria-label={text}>
@@ -36,7 +28,7 @@ export default function AnimatedTitle({
           key={i}
           className="char-anim"
           style={{
-            animationDelay: started ? `${i * charDelay}ms` : '0ms',
+            animationDelay: isIntersecting ? `${i * charDelay}ms` : '0ms',
             display: 'inline-block',
             // 空格保留正常宽度和换行行为
             whiteSpace: char === ' ' ? 'pre' : undefined,

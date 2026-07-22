@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import GameCard from '../../components/GameCard';
 import AnimatedTitle from '../../components/AnimatedTitle';
+import { Icons } from '../../components/Icons';
 import games from '../../data/games';
 
 const featuredGames = games.filter((g) => g.featured);
@@ -26,7 +27,7 @@ export default function FeaturedSection() {
           >
             查看全部
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={Icons.chevronRight} />
             </svg>
           </Link>
         </div>
@@ -44,7 +45,7 @@ export default function FeaturedSection() {
           >
             查看全部游戏
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={Icons.chevronRight} />
             </svg>
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import ParticleBackground from '../../components/ParticleBackground';
+import { Icons } from '../../components/Icons';
 import { useMouseParallax } from '../../hooks/useMouseParallax';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { useCountUp } from '../../hooks/useCountUp';
@@ -126,7 +127,7 @@ export default function HeroSection() {
             className="ripple-container inline-flex items-center gap-2 border border-border hover:border-primary/40 text-text-primary px-7 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-bg-card hover:-translate-y-0.5"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={Icons.mail} />
             </svg>
             联系我
           </Link>

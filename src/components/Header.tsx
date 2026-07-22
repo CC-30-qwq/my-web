@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 import ThemeToggle from './ThemeToggle';
+import BrandLogo from './BrandLogo';
 
 const navLinks = [
   { to: '/', label: '首页' },
@@ -55,9 +56,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 font-bold text-text-primary hover:opacity-80 transition-opacity">
-            <span className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center text-white text-sm shadow-lg shadow-primary/30">
-              W
-            </span>
+            <BrandLogo size="sm" />
             <span className="hidden sm:inline text-lg tracking-tight">作品集</span>
           </Link>
 

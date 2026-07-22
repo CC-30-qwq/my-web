@@ -127,19 +127,6 @@
     transform: translateY(-2px);
   }
 
-  /* 旧版 glow-on-hover → 兼容别名 */
-  .glow-on-hover {
-    transition:
-      box-shadow 0.25s var(--ease-standard),
-      transform 0.25s var(--ease-standard),
-      border-color 0.25s var(--ease-standard);
-  }
-  .glow-on-hover:hover {
-    box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 8px 20px rgba(0, 0, 0, 0.18);
-  }
-
   /* Section divider */
   .section-divider {
     height: 1px;

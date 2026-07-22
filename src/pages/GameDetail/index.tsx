@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import Badge from '../../components/ui/Badge';
 import IframeLoader from '../../components/IframeLoader';
 import games from '../../data/games';
+import { Icons } from '../../components/Icons';
 
 export default function GameDetail() {
   const { id } = useParams<{ id: string }>();
@@ -21,7 +22,7 @@ export default function GameDetail() {
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={Icons.arrowLeft} />
             </svg>
             返回作品列表
           </Link>
@@ -43,7 +44,7 @@ export default function GameDetail() {
               aria-label="返回作品列表"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={Icons.arrowLeft} />
               </svg>
             </Link>
             <div className="min-w-0">
@@ -66,14 +67,16 @@ export default function GameDetail() {
 
       {/* 内容区域 — 自动填充剩余空间 */}
       {game.type === 'video' ? (
-        <div className="flex-1 bg-black flex items-center justify-center p-4">
+        <div className="flex-1 bg-black flex items-center justify-center p-4" style={{ minHeight: 0 }}>
           <video
             src={game.path}
             controls
-            className="max-w-full max-h-full rounded-lg"
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-contain rounded-lg"
             style={{ maxHeight: 'calc(100dvh - 60px)' }}
           >
-            您的浏览器不支持视频播放
+            <p className="text-white text-center p-10">您的浏览器不支持视频播放，请尝试用 Chrome 打开</p>
           </video>
         </div>
       ) : (
